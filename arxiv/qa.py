@@ -1,20 +1,17 @@
 #!/usr/bin/env python
 
 # pip install langchain_ollama langchain_core langchain_community arxiv
-from langchain_core.prompts import ChatPromptTemplate
-from langchain_ollama.llms import OllamaLLM
+
 from langchain_ollama.chat_models import ChatOllama
-from langchain_community.embeddings import OllamaEmbeddings
 from langchain import hub
 from langchain_community.agent_toolkits.load_tools import load_tools
 from langchain.agents import AgentExecutor, create_react_agent
-from langchain_core.prompts import PromptTemplate
-import os
-from typing import List
-
+# Use if building own template (rather than using hub example)
+#from langchain_core.prompts import PromptTemplate
 from langchain_core.tools import tool
 from langchain_ollama import ChatOllama
 from langchain.agents import create_tool_calling_agent, AgentExecutor
+import os
 
 
 os.environ["LLAMAFILE_SERVER_BASE_URL"] = "http://localhost:11434"
